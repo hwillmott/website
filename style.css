@@ -1,0 +1,105 @@
+.site-description {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        height: 50px;
+        z-index: 2;
+        font-family: 'Poiret One', serif;
+	color: rgba(0, 0, 0, 1);
+	font-size: 1.875em;
+	line-height: 2.3;
+	font-weight: normal;
+        text-align: center;
+}
+
+header {
+  width: 100%;
+  background: rgba(0,0,0,0);
+  height: 0px;
+  line-height: 50px;
+}
+
+.hamburger {
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 45px;
+  padding: 0px 15px 0px 15px;
+  color: rgba(0,0,0,0.7);
+  border: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
+}
+
+.cross {
+  background: none;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 0px 15px 0px 15px;
+  color: rgba(0,0,0,0.7);
+  border: 0;
+  font-size: 3em;
+  line-height: 65px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 10000000000000;
+}
+
+.menu {
+  z-index: 1000000;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Poiret One', serif;
+  width: 30%;
+  height: 100%;
+  background: rgba(100,100,100,1);
+  position: absolute;
+  right:0px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.menu li {
+  display: block;
+  padding: 15px 0 15px 0;
+}
+
+.menu li:hover {
+  display: block;
+  background: rgba(0,0,0,0.1);
+  padding: 15px 0 15px 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  margin: 0px;
+  color: rgba(0,0,0,1);
+}
+
+.menu ul li a:hover {
+  color: rgba(0,0,0,1);
+  text-decoration: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgba(0,0,0,1);
+}
+
+.menu a:hover {
+  text-decoration: none;
+  color: rgba(0,0,0,1);
+}
