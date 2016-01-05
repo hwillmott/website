@@ -11,7 +11,7 @@ PImage img;
 
 void setup()
 {
- size(600,600,P2D);
+ size(605,806);
  smooth();
  frameRate(20);
  hiveX = width / 2 + 20;
@@ -21,6 +21,12 @@ void setup()
   bees[i] = new Bee(); 
  }
  img = loadImage("/images/hive.png");
+}
+
+void mousePressed()
+{
+    hiveX = mouseX;
+    hiveY = mouseY;
 }
 
 void draw()
