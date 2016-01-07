@@ -11,7 +11,7 @@ PImage img;
 
 void setup()
 {
- size(605,806);
+ size(605,700);
  smooth();
  frameRate(20);
  hiveX = width / 2 + 20;
