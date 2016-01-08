@@ -6,7 +6,7 @@ class Bee
   
  Bee()
  {
-   p = new PVector(random(width), random(height));
+   p = new PVector(width/2, height/2);
    pOld = new PVector(p.x, p.y);
    stepSize = random(5, 10);
    noiseZ = random(0.4);

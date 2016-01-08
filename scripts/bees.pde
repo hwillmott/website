@@ -11,7 +11,8 @@ PImage img;
 
 void setup()
 {
- size(605,700);
+ jProcessingJS(this, {fullscreen:true});
+ background(#ccc7b6);
  smooth();
  frameRate(20);
  hiveX = width / 2 + 20;
@@ -31,8 +32,12 @@ void mousePressed()
 
 void draw()
 {
+ noStroke();
+ fill(#ccc7b6, overlayAlpha)
+ rect(0,0,width/2 - 300, height);
+ rect(width/2 + 305,0, width, height);
  tint(255, overlayAlpha);
- image(img,0,0);
+ image(img,width / 2 - 300,0);
  
  stroke(0, beeAlpha);
  
