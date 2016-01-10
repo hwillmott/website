@@ -57,7 +57,7 @@ function sketchProc(processing)
 
     processing.setup = function()
     {
-        processing.size(1000,400);
+        processing.size(1000,270);
         processing.noStroke();
         initColors()
     }
@@ -65,6 +65,7 @@ function sketchProc(processing)
     processing.draw = function()
     {
         processing.background(300);
+        drawEndDates();
         var x = 0;
         for(var i = 0; i < companies.length; i++)
         {
@@ -78,6 +79,18 @@ function sketchProc(processing)
             drawLabel(i, x);
             x = x + rectangleWidth;
         }
+    }
+
+    function drawEndDates()
+    {
+        processing.text("2009", 0, 26);
+        processing.textAlign(processing.RIGHT);
+        processing.text("Present", processing.width - 3, 26);
+        processing.stroke(30);
+        processing.line(1,30,1,startHeight + rectangleHeight - 2);
+        processing.line(processing.width - 1, 30, processing.width - 1, startHeight + rectangleHeight - 2);
+        processing.noStroke();
+        processing.textAlign(processing.LEFT);      
     }
 
     function drawRectangle(i, x, rectangleWidth)
@@ -97,25 +110,25 @@ function sketchProc(processing)
     function drawLabel(i, x)
     {
         processing.fill(0);
-        processing.textSize(11);
+        processing.textSize(12);
         if (i == focusIndx)
         {
-            processing.text(companies[i], x + 2, 50);
+            processing.text(companies[i], x + 4, 50);
         }
         else
         {
-            processing.text(companies[i], x + 2, 45);
+            processing.text(companies[i], x + 4, 45);
         }
     }
 
     function drawContent(i)
     {
         processing.fill(0);
-        processing.textSize(14);
-        processing.text(positions[i], 20, 120);
-        processing.text(durations[i], 20, 140);
-        processing.textSize(11);
-        processing.text(descriptions[i], 20, 160);
+        processing.textSize(16);
+        processing.text(positions[i], 15, 120);
+        processing.text(durations[i], 15, 140);
+        processing.textSize(12);
+        processing.text(descriptions[i], 15, 160);
     }
 
     function initColors()
@@ -130,7 +143,6 @@ function sketchProc(processing)
         colors[6] = processing.color(219, 97, 217);
     }
 }
-
 
 readXml("data/workexperience.xml");
 

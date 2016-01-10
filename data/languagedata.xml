@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
 <languages>
-    <language name="Java" strength="10"/>
-    <language name="C#" strength="10"/>
-    <language name="Python" strength="8"/>
-    <language name="Processing" strength="5"/>
-    <language name="XAML" strength="4"/>
-    <language name="HTML(5)" strength="4"/>
-    <language name="JavaScript" strength="4"/>
-    <language name="C" strength="3"/>
-    <language name="SQL" strength="3"/>
-    <language name="JavaScript" strength="3"/>
-    <language name="PHP" strength="1"/>
-    <language name="XML" strength="1"/>
-    <language name="CSS" strength="1"/>
-    <language name="ARM" strength="1"/>
+    <language name="C#" strength="10">I have over a year of full-time development experience in C# from using it daily at Microsoft. I am very confident in my abilities as a C# developer and understand many of the nuances of the language.</language>
+    <language name="Java" strength="10">Java was the main teaching language at the University of Victoria, and as a result, I am very comfortable programming in Java. I also used it during my internships at OA Solutions and Semaphore Solutions.</language>
+    <language name="Python" strength="8">Over the years, I have used Python for programming in my free time. Mostly small scripts (since there's so little overhead). I have gradually become pretty proficient in Python and I love using it wherever I can.</language>
+    <language name="C" strength="6">C was another teaching language at UVic, mostly in Engineering courses. I learned multithreading and pointer arithmetic with C in my 2nd and 3rd years, but haven't used it much since.</language>
+    <language name="Processing" strength="5">I have been writing Processing sketches for my website in my free time. It is Java-based and I have been picking it up quite quickly (because I'm having so much fun!). I built these visualizations with Processing.</language>
+    <language name="XAML" strength="4">I use XAML at Microsoft every day.</language>
+    <language name="HTML(5)" strength="4">I have used HTML(5) for multiple websites over the years and I understand the basics.</language>
+    <language name="JavaScript" strength="4">I use JavaScript in conjunction with Processing (Processing.js) to put sketches onto my website and I briefly used JavaScript at OA Solutions. I also learned about JavaScript in a course at UVic and understand Lambda notation.</language>
+    <language name="SQL" strength="3">I have used SQL at every industry job so far, except for Microsoft. I also took a databases course at UVic where I learned database design and complex query design.</language>
+    <language name="XML" strength="2">I mean, it's the mother of all markup languages! This text is coming from an XML file.</language>
+    <language name="PHP" strength="1">I have built a website theme from scratch for Wordpress (uses PHP).</language>
+    <language name="CSS" strength="1">I built a website theme from scratch and got pretty good at CSS. Haven't used it that much in the past couple years, but it's not that difficult as long as you're good at organization.</language>
+    <language name="ARM" strength="1">I programmed in ARM (and C) for a class at UVic. I really liked it once I got past the learning curve. I don't remember much of it anymore, but I could pick it up again quickly.</language>
 </languages>

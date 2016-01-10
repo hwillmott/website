@@ -1,5 +1,6 @@
 var names;
 var sizes;
+var languageTexts;
 var angles;
 var colors;
 
@@ -31,11 +32,13 @@ function readXml(xmlFile)
     var languages = xmlDoc.getElementsByTagName("language");
     names = new Array(languages.length);
     sizes = new Array(languages.length);
+    languageTexts = new Array(languages.length);
 
     for (var i = 0; i < languages.length; i++)
     {
         names[i] = languages[i].getAttribute("name");
         sizes[i] = parseInt(languages[i].getAttribute("strength"));
+        languageTexts[i] = languages[i].textContent;
 
         sum = sum + sizes[i];
     }
@@ -46,7 +49,7 @@ function sketchProc(processing)
 {
     processing.setup = function()
     {
-        processing.size(500,350);
+        processing.size(700,350);
         processing.noStroke();
 
         angles = new Array(names.length);
@@ -87,8 +90,10 @@ function sketchProc(processing)
             {
                 processing.arc(originX, originY, diameter + 20, diameter + 20, angle, angles[i]);
                 processing.fill(0, 0, 0);
-                processing.textSize(16);
-                processing.text(names[i], processing.width - 100, 100);
+                processing.textSize(14);
+                processing.text(names[i], 400, 130);
+                processing.textSize(12);
+                processing.text(languageTexts[i], 400, 150, 300, 200);
             }
             else
             {

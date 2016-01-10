@@ -36,6 +36,7 @@ void draw()
  fill(#ccc7b6, overlayAlpha)
  rect(0,0,width/2 - 300, height);
  rect(width/2 + 305,0, width, height);
+ rect(width / 2 - 300, 400, 605, height - 400);
  tint(255, overlayAlpha);
  image(img,width / 2 - 300,0);
  
