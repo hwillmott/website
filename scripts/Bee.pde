@@ -13,7 +13,7 @@ class Bee
  }
  
  void Update()
- { //<>// //<>//
+ { 
    if (dist(p.x, p.y, hiveX, hiveY) > stepSize * 20)
    {
      angle = atan2(hiveY - p.y, hiveX - p.x); //<>//

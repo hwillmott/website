@@ -5,16 +5,23 @@ float currentYDelta[];
 float maxYDelta[];
 float step[];
 int count;
+boolean drawT;
+int tongueTimer = 0;
+PVector tStart;
+float tFactor;
+float xMargin;
 
 void setup()
 {
-  size(600,800);
+  jProcessingJS(this, {fullscreen:true});
   colorMode(HSB, 360, 100,100,100);
   x = new float[300];
   y = new float[300];
   currentYDelta = new float[300];
   maxYDelta= new float[300];
   step = new float[300];
+  xMargin = width / 2 - 300;
+  tStart = new PVector(369 + xMargin, 625);
   img = loadImage("/images/python.png");
   initializePoints();
   for(int i = 0; i < count; i++)
@@ -24,14 +31,21 @@ void setup()
     currentYDelta[i] = random(0,maxYDelta[i]);
     float startStep = map(y[i], 197, 655, 0, 0.3);
     step[i] = random(startStep, startStep * 2);
+    x[i] = x[i] + xMargin;
   }
 }
 
 void draw()
 {
-  image(img, 0, 0, 600, 800);
-  fill(0);
   noStroke();
+  image(img, xMargin, 0, 600, 800);
+
+  fill(#d9c7b9);
+  rect(0,0,xMargin, height); // left edge
+  rect(xMargin + 600, 0, width, height); // right edge
+  rect(xMargin, 800, 600, height - 800); // bottom
+
+  fill(0);
   for(int i = 0; i < count; i++)
   {
     float opacity = 100 - currentYDelta[i] / maxYDelta[i] * 100;
@@ -39,14 +53,25 @@ void draw()
    ellipse(x[i], y[i] - currentYDelta[i], 2, 2);
    currentYDelta[i] += step[i];
    if (currentYDelta[i] >= maxYDelta[i]) currentYDelta[i] = 0;
-  }
+  }  
+  if (drawT) drawTongue();
 }
 
-void keyPressed()
+void drawTongue()
 {
- println("x[count] = " + mouseX + ";");
- println("y[count] = " + mouseY + ";");
- println("count++;");
+  noFill();
+  stroke(#c764ce);
+  strokeWeight(1);
+  float nextX = tStart.x + abs(tongueTimer) * (4 + tFactor);
+  line(tStart.x, tStart.y, nextX, tStart.y);
+  if (tongueTimer-- <= 0)drawT = false;
+}
+
+void mousePressed()
+{
+  drawT = true;
+  tongueTimer = 4;
+  tFactor = random(1,3);
 }
 
 void initializePoints()
