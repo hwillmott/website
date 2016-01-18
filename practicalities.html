@@ -1,6 +1,5 @@
 <html>
     <head>
-        <title>Lions, Tigers, and Bears</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
@@ -10,30 +9,105 @@
         <script type="text/javascript" src="/scripts/sitefunctions.js"></script>
     </head>
 
-    <body style="background-color:#cacfd4; font-family:Arial;">
+    <body>
         <div id="headermenu"></div>
-        <h1>About me</h1>
-        <h3>Seattle, Washington</h3>
-        <h3>https://github.com/hwillmott</h3>
-        <h3>harriet.willmott@gmail.com</h3>
-        <h2>Languages</h2>
-        <p><canvas id="canvas1" style="position:relative;  width: z-index: 1"></canvas></p>
-        <h2>Experience</h2>
-        <p><canvas id="canvas2" style="position:relative; z-index: 1"></canvas></p>
+        <div style="width:1000px; text-align:left; margin-left:auto; margin-right:auto;">
+            <h1 class="resumetitle">Harriet Willmott</h1>
+            <div>
+                <div class="columnLeft">Seattle, Washington<br>206-549-9131</div>
+                <div class="columnRight">
+                    <a href="https://github.com/hwillmott">https://github.com/hwillmott</a><br>
+                    <a href="mailto:harriet.willmott@gmail.com">harriet.willmott@gmail.com</a>
+                </div>
+            </div>
+            <hr style="margin-top: 20px;"/>
+            <div class="resumeregion" style="width: 50%; margin-left: auto; margin-right: auto; text-align: center;">
+                <h2>Education</h2>
+                <h4>University of Victoria (2009-2014)</h4>
+                <p>Bachelors of Computer Science with Honours and Distinction</p>
+                <h4 style="margin-bottom:0;">Awards and Scholarships</h4>
+                <div style="line-height:1;">
+                    <p style="margin-top:0; ">James R. Bullick Memorial Scholarship (Engineering) 2012<br>
+                    University of Victoria Faculty Scholarship (Engineering) 2012<br>
+                    President's Scholarship 2012<br>
+                    President's Entrance Scholarship (UVic) 2009<br>
+                    Grade 12 Provincial Scholarship Award 2009<br>
+                    Grade 12 Passport to Education Scholarship Award 2009</p>
+                </div>
+            </div>
+            <div class="resumeregion" style="width: 70%; margin-left: auto; margin-right: auto;">
+                <h2>Programming Languages</h2>
+                <p><canvas id="canvas1" style="position:relative; z-index: 1"></canvas></p>
+            </div>
+            <div class="resumeregion" style="margin-bottom:100px">
+                <h2>Work Experience</h2>
+                <p><canvas id="canvas2" style="position:relative; z-index: 1"></canvas></p>
+            </div>
+            <div class="resumeregion">
+                <h2>Personal Projects, Volunteering, and Other Extracurriculars</h2>
+                <h4>Learning Processing (November 2015 - Present)</h4>
+                <p>I am learning Processing out of personal interest. I really enjoy trying to figure out a mathematical way to describe natural phenomena. Processing is a beginners graphics language built on Java. My favourite sketches are on my website (enabled by processing.js and other libraries).</p>
 
-        <script id="script1" type="text/javascript" src="/scripts/languages.js"></script>
-        <script id="script2" type="text/javascript" src="/scripts/timeline.js"></script>
-        <h2>Education</h2>
-        <h4>Bachelors of Computer Science with Honours and Disctinction</h4>
-        <p>University of Victoria (2009-2014)</p>
-        <h5 style="line-height:1;">Awards and Scholarships</h5>
-        <div style="line-height:1; font-size:10pt;">
-            <p>James R. Bullick Memorial Scholarship (Engineering) 2012<br>
-            University of Victoria Faculty Scholarship (Engineering) 2012<br>
-            President's Scholarship 2012<br>
-            President's Entrance Scholarship (UVic) 2009<br>
-            Grade 12 Provincial Scholarship Award 2009<br>
-            Grade 12 Passport to Education Scholarship Award 2009</p>
+                <h4>Software Lead (August 2011 - December 2013)</h4>
+                <p>Aero Club, University of Victoria (designs and builds unmanned aerial vehicles for annual competition)</p>
+                <p style="font-style: italic;">Responsibilities:</p>
+                <ul>
+                    <li>Research existing autopilot technologies and decide what type of autopilot the team will use</li>
+                    <li>Organize the software team to get the autopilot running properly</li>
+                    <li>Lead team meetings to make important decisions regarding the autopilot</li>
+                    <li>Work with the team on the autopilot code (mainly focused on automating a search flight path)</li>
+                    <li>Recruit and onboard other students</li>
+                </ul>
+
+                <h4>Consultant (October 2007 - December 2007)</h4>
+                <p>Saanich Recreation, Victoria BC</p>
+                <p style="font-style: italic;">Responsibilities:</p>
+                <ul>
+                    <li>Discuss recreational activities and their suitability for young girls</li>
+                    <li>Vote on proposed programs for young girls</li>
+                    <li>Design classes and tutorials (swimming clubs, archery classes, volleyball lessons, etc.) for young girls to try out</li>
+                </ul>
+            </div>
+
+            <div class="resumeregion">
+                <h2>Hobbies and Interests</h2>
+                <div style="height: 200px">
+                    <div class="onethirdcolumn">
+                        <h4>Cycling</h4>
+                        <p>I love using my bike to get around and going for scenic bike rides. I'm not very competitive, so I've never raced. I'm more interested in enjoying the ride. I love hills!</p>
+                    </div>
+                    <div class="onethirdcolumn">
+                        <h4>Yoga</h4>
+                        <p>I have been doing yoga for about a decade. I am by no means an expert, but it is a regular part of my life and I practice about 3 times a week.</p>
+                    </div>
+                    <div class="onethirdcolumn">
+                        <h4>Skiing</h4>
+                        <p>I started skiing when I was 4 and have always lived near a ski slope. It's one of the greater joys of winter.</p>
+                    </div>
+                </div>
+                <div style="height: 150px">
+                    <div class="onethirdcolumn">
+                        <h4>Science Fiction</h4>
+                        <p>I love reading and, ever since I got a Kindle in 2014, I have been on a Sci Fi binge. Neal Stephenson!</p>
+                    </div>
+                    <div class="onethirdcolumn">
+                        <h4>Cooking</h4>
+                        <p>I love food! I enjoy learning new dishes, especially international cuisine. I took cooking classes in Bangkok and curry is one of my go-to dinners.</p>
+                    </div>
+                    <div class="onethirdcolumn">
+                        <h4>Drawing</h4>
+                        <p>It feels good to have a creative outlet, and really it's a shame that most people stop drawing when they leave elementary school.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resumeregion">
+                <h2>References</h2>
+                <p style="text-align:center;">Please contact for references: <a href="mailto:harriet.willmott@gmail.com">harriet.willmott@gmail.com</a></p>
+            </div>
+
+            <script id="script1" type="text/javascript" src="/scripts/languages.js"></script>
+            <script id="script2" type="text/javascript" src="/scripts/timeline.js"></script>
         </div>
 
     </body

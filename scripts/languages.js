@@ -90,9 +90,9 @@ function sketchProc(processing)
             {
                 processing.arc(originX, originY, diameter + 20, diameter + 20, angle, angles[i]);
                 processing.fill(0, 0, 0);
-                processing.textSize(14);
+                processing.textSize(16);
                 processing.text(names[i], 400, 130);
-                processing.textSize(12);
+                processing.textSize(14);
                 processing.text(languageTexts[i], 400, 150, 300, 200);
             }
             else

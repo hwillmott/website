@@ -57,7 +57,7 @@ function sketchProc(processing)
 
     processing.setup = function()
     {
-        processing.size(1000,270);
+        processing.size(1000,290);
         processing.noStroke();
         initColors()
     }
@@ -127,7 +127,7 @@ function sketchProc(processing)
         processing.textSize(16);
         processing.text(positions[i], 15, 120);
         processing.text(durations[i], 15, 140);
-        processing.textSize(12);
+        processing.textSize(14);
         processing.text(descriptions[i], 15, 160);
     }
 

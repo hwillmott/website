@@ -82,6 +82,61 @@ header {
   white-space: nowrap;
 }
 
+.resumetitle {
+  font-size: 40px;
+  margin: 0;
+}
+
+.resumeregion {
+  margin-bottom: 200;
+}
+
+body {
+  font-family: Arial;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h4 {
+  margin-top: 30px;
+}
+
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.columnLeft {
+  text-align: left;
+}
+
+.columnRight {
+  float: right;
+  margin-top: -40px;
+  text-align: right;
+}
+
+.onethirdcolumn {
+  float: left; 
+  margin: 0; 
+  width: 33%;
+}
+
+.onethirdcolumn h4 {
+  text-align: center;
+}
+
+.onethirdcolumn p {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .menu ul {
   margin: 0;
   padding: 0;
