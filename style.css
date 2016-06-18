@@ -72,13 +72,13 @@ header {
   z-index: 1000000;
   font-weight: bold;
   font-size: 1.5em;
-  font-family: 'Poiret One', serif;
-  width: 30%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 20%;
   height: 100%;
   background: rgba(0,0,0,0.4);
   position: absolute;
   right:0px;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
 }
 
@@ -111,6 +111,12 @@ hr {
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
+img .centeredImage{
+  display:block; 
+  margin-left:auto; 
+  margin-right:auto;
+}
+
 .columnLeft {
   text-align: left;
 }
@@ -137,22 +143,26 @@ hr {
   margin-right: auto;
 }
 
+.menu p {
+  padding-left: 10px;
+}
+
 .menu ul {
   margin: 0;
-  padding: 0;
+  padding: 0 10px 0 10px;
   list-style-type: none;
   list-style-image: none;
 }
 
 .menu li {
   display: block;
-  padding: 15px 0 15px 0;
+  padding: 15px 20px 15px 20px;
 }
 
 .menu li:hover {
   display: block;
   background: rgba(0,0,0,0.5);
-  padding: 15px 0 15px 0;
+  padding: 15px 20px 15px 20px;
 }
 
 .menu ul li a {
