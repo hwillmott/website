@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+        <script type="text/javascript" src="/scripts/sitefunctions.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
+
+    <body style="margin:auto; width:800px;">
+        <div id="headermenu"></div>
+        <h1>Electronics Build</h1>
+        <p>This is a breakdown of how I built an 8 x 32 pixel LED grid to mount on my wall. I used a lot of instruction from the Adafruit website, specifically their Neopixel Uberguide: <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/overview">https://learn.adafruit.com/adafruit-neopixel-uberguide/overview</a></p>
+        <h2>Power considerations</h2>
+        <h3>Power Supply</h3>
+        <p>8 x 32 = 256 LEDs, which means: </p>
+        <p>256 NeoPixels * 20 mA / 1,000 = 5.12 Amps minimum for half brightness on all pixels (pretty damn bright)</p>
+        <p>256 NeoPixels * 60 mA / 1,000 = 15.36 Amps minimum for full brightness on all pixels (blinding)</p>
+        <p>These are RGB pixels, which means there is a red light, a green light, and a blue light. All pixels on half brightness essentially means RGB(127, 127, 127), which is white. All pixels on full brightness would be RGB(255, 255, 255), which is also white, but twice as bright (hurts your eyes). I prototyped some visualizations on some existing LED strips and estimate that I was only ever using 1/3 of the LEDs' full potential at any time, since I often don't have all pixels on, and I'm usually using colors other than white, for example: RGB(70, 50, 40).</p>
+        <p>I went with the 10 Amp power brick to be on the safe side. Whatever power brick you use HAS to be a 5V power brick otherwise you will fry your LEDs. If you're trying to power more than 10Amps, there are ways to hack together an old computer power supply to make it work, but it's more dangerous and obviously more difficult than just using a power brick.</p>
+        <h3>Power Management</h3>
+        <p>You need a capacitor on your power rail (on the circuit board) in between the barrel jack (where the power brick plugs in) and the LED connections. This is so your LEDs don't get fried when you first plug in the power. </p>
+        <p>It is also recommended that you have resistors in between the data line coming from the Fadecandy and the data line going to the LEDs. The Fadecandy does have resistors on it, but I added some just to be safe.</p>
+        <h2>Circuit Design</h2>
+        <h3>Adafruit's Recommended Design</h3>
+        <img class="centeredImage" src="https://cdn-learn.adafruit.com/assets/assets/000/012/345/medium640/led_pixels_system-diagram-1.png?1384915040"/>
+        <h3>Prototyping/Breadboard Overview</h3>
+        <p>The prototyping board I used (identical design to the breadboard) has power rails going along the board and each numbered line on each side is connected across that side of the board (e.g. 1J is connected to 1I, 1H, 1G, and 1F, but not 1A, 1B, 1C, 1D, or 1E). So, if you plug the Fadecandy data out wire into 18F, you can plug another wire into 18G and connect that to the LED data in terminal and your LED will have data (if you get everything else right).</p>
+        <img class="centeredImage" src="/images/ledpanel/proto.jpg"/>
+        <h3>My Final Design</h3>
+        <p>The LEDs need both power and data. The power comes from the power brick and the data comes from the Fadecandy (connected by USB to a computer). The Fadecandy and the LEDs both need to be connected to ground, which is made available through the power brick. I decided to create a hub for both power and data that the LEDs could connect to, so there wouldn't be a whole mess of wires behind the frame.</p>
+        <p>The following is a picture of the circuit design I ended up with.</p>
+        <p>Black: ground</p>
+        <p>Blue: data</p>
+        <p>Red: power</p>
+        <img class="centeredImage" src="/images/ledpanel/circuit.jpg"/>
+        <p>Each data line coming from the Fadecandy corresponds directly to one LED strip, partially to make my life easy, but also because the resistance in copper wire is enough that after a meter you start losing some of your data and the color of the LEDs will become less accurate. Each Fadecandy output port can support data for 64 LEDs, but since I'm using the 30 pixel per meter strips (and after a meter or so, things start getting weird), I decided to play it safe. If you're doing this with the 60 pixel per meter strips, you could have a different configuration.</p>
+        <p>So, data and ground come from the Fadecandy and connect with the ground rail and a horizontal line on the board. Then, a resistor connects that horizontal line with the one above. Data comes out from that line, with another ground and a power connection going to the LED strip. I lined them all up visually just to make things easy (they appear a little offset in the drawing because I didn't want lines to overlap). Grid cells on the paper represent holes in the breadboard.</p>
+        <p>Here's a choppy closeup:</p>
+        <img class="centeredImage" src="/images/ledpanel/closeup.jpg"/>
+        <h2>Prototyping</h2>
+        <p>No one wants to solder everything together and then realize they mixed up power and ground and all their LEDs are fried. This stage is essential. You still need to do a bit of soldering, but we can minimize risk of getting irreversible things wrong.</p>
+        <h3>Solder Connections to the Fadecandy</h3>
+        <p>I used the 2-Pin connectors for this. Black for ground and red for data. Use the FEMALE part of the pair, so you can plug the breadboard jumper wires into it. One connector for each of the 8 output pairs. Ground is on the edge of the board and data is on the inside. They're numbered 0-7.</p>
+        <p>Make sure you have good ventilation, especially if you're using lead core solder!</p>
+        <p>When you're done this, you have 8 female 2-pin connectors poking out of your Fadecandy. Nice!</p>
+        <h3>Plug Things into the Breadboard</h3>
+        <ol>
+            <li>The barrel jack. There are 3 things poking out of the barrel jack: two in line with the hole and one on the side. Cut off the one on the side with your wire cutters. The top one (farthest from hole) is the power out. The bottom one is ground. See Adafruit's Recommended Design above. The horizontal bar that you're plugging the +5V pin into needs to be connected to the power rail (with a jumper) and the horizontal bar that you're plugging the ground pin into needs to be connected to the ground rail.</li>
+            <li>The capacitor. I used an electrolytic capacitor, which has polarity (matters which way you plug it in). The negative side (marked with stripe on most capacitors) is connected to the ground rail and the positive side is connected to the power rail.</li>
+            <li>Data and ground from Fadecandy for one output pair (use breadboard jumpers).</li>
+            <li>Resistor between horizontal lines</li>
+            <li>Before even cutting the LED strips, it's worth making sure they actually work. Data, ground, and power need to go into the LED strip. The LED strips I got came with a 3-prong connector already soldered on. Line up and triple-check your connections (use more breadboard jumpers). There was also an extra ground wire coming from the LEDs, which would fit into Adafruit's example (connects fadecandy ground -> LED ground -> power ground in a roundabout way), but isn't necessary for our example. You don't have to do anything with this.</li>
+        </ol>
+
+        <p>TRIPLE CHECK EVERYTHING AND MAKE SURE NO EXPOSED WIRE IS TOUCHING ANY OTHER EXPOSED WIRE. This is what electrical tape is for.</p>
+        <p>At this point, your Fadecandy shouldn't be connected yet to your computer with USB, and you haven't plugged the power bar into the barrel jack. </p>
+        <h3>Do Software Things and TEST STUFF</h3>
+        <ol>
+            <li>Clone this repository to your computer: https://github.com/scanlime/fadecandy</li>
+            <li>Go to the bin folder and start the fcserver application corresponding to your operating system (e.g. fcserver-osx for mac)</li>
+            <li>A terminal should open saying there aren't any fadecandys connected. It also tells you where you can access the server: 127.0.0.1:7890</li>
+            <li>Navigate to that address in your web browser!</li>
+            <li>Plug the fadecandy into your computer using the USB cable. The web browser should update saying that a fadecandy is detected.</li>
+            <li>Hold your breath, triple check you have ground and power in all the right places, and plug the power bar into the barrel jack (brace the barrel jack with your thumb to plug it in because it will be sort of loose).</li>
+            <li>Use the Test Patterns dropdown to select 50% brightness (full brightness is just unpleasant).</li>
+        </ol>
+        <p>Boom. 64 of the pixels in your strip should be lit up.</p>
+        <p>If this doesn't work, go here and do some troubleshooting:<br>https://github.com/scanlime/fadecandy</p>
+        <h2>Making THE REAL THING</h2>
+        <p>We want the LEDs to still be in their translucent sheath because it diffuses the light nicely. When you're soldering, you need to wiggle them out of the sheath a little bit, but don't go overboard. It's hard to push them back in. I found that you could grab the inside end with needlenose pliers and pull gently while manipulating the sheath lengthways and that worked pretty well. You'll figure it out. Just don't push really hard on the strip to get it back in or you'll bend the metal and perhaps damage some stuff. </p>
+        <h3>Cut LEDs to Size</h3>
+        <p>You need 8 strips of 32 LEDs, which will probably be some combination of 2 larger strips of LEDs. When you're cutting the LED strips, you want to cut as straightly as you can halfway through the connections between the LEDs (dout -> din, gnd -> gnd, +5V -> +5V). These are little copper ovals on the strip. Try to cut them exactly down the middle. There's even a little marked line to show you where to cut. Do your future self a favor and leave room for soldering connections.</p>
+        <p>Cut the sheathing with the LED strips (we want to keep it), by aiming the wire cutters for the metal part and cutting that in one go, then clipping whatever parts of the sheath are still connected. </p>
+        <img class="centeredImage" src="/images/ledpanel/cutsolder.png"/>
+        <h3>Maybe Solder Some Strips Together</h3>
+        <p>If you're me, you ended up with 7 32-pixel strips and a smaller strip from the end of each of my 2 reels, which needed to be soldered together. DON'T CUT THEM TO SIZE. Just solder them together (din -> dout). Maybe you'll make a mistake and they won't be lined up perfectly or the connection will suck and you'll have to cut off an LED and start over. Make sure the arrows on the strips are pointing the same way. </p>
+        <p>Solder them together by lining them up so they're a straight line together and make sure you measure the distance between the LEDs you're connecting and they're the same distance apart as LEDs that haven't been soldered together by hand (3.3 cm but double check anyways). Then basically heat up the copper pad and drop some solder on there so there's a mound between the two strips.</p>
+        <p>Make sure you have good ventilation, especially if you're using lead core solder!</p>
+        <h3>Solder 3 Pin Connectors on Every Strip</h3>
+        <p>We want the female part of these connector pairs attached to every strip the same way. The connectors only plug together one way (like a USB drive) because we obviously don't want to be able to connect power to ground accidentally. Get familiar with how they plug together, then solder one female connector to each of the strips.</p>
+        <img class="centeredImage" src="/images/ledpanel/3pin.png"/>
+        <h3>Test Your Stuff Again</h3>
+        <p>Now you can use breadboard jumpers to test each strip individually (and every output pair from the fadecandy!) using the steps above.</p>
+        <p>If that all worked, then the circuit design is good and all the parts are good! Time to solder some stuff to the protoboard. </p>
+        <h3>Solder the Final Circuit</h3>
+        <p>Now you're going to use the male counterparts of all the connectors you have soldered to the Fadecandy and the LEDs respectively. The 2 Pin ones are pretty straightforward to line up, but the 3 Pin ones are less straightforward. Because Din on the LEDs is in the middle of the strip but on the circuit, it's on the edge of the row, you will have to cross two of the wires going into the male part from the circuit board. Double-check how they plug in together, remind yourself which one is going to be ground, data, and power, line it up, and triple-check it. </p>
+        <p>I soldered everything in rows up from the 'bottom', so I did the barrel jack, the capacitor, then data in and ground from the fadecandy (male 2 Pin), then the resistor, then data out, ground, and power for the male 3 pin, and repeated all the way up. </p>
+        <p>Make sure you have good ventilation, especially if you're using lead core solder!</p>
+        <h3>Test Your Stuff Again</h3>
+        <p>You know how this goes! </p>
+        <p>Wooot! Time for the frame.</p>
+        <h2><a href="http://harrietwillmott.ca/framebuild.html">Next: build the frame</a></h2>
+    </body
+</html>

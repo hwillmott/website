@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+        <script type="text/javascript" src="/scripts/sitefunctions.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
+
+    <body style="margin:auto; width:800px;">
+        <div id="headermenu"></div>
+        <h1>Frame Build</h1>
+		<p>This is a breakdown of how I built a frame for the LEDs so it wouldn't look terrible mounted on my wall</p>
+		<h2>Important Measurements</h2>
+		<p>Verify these all yourself. Maybe our LEDs are a little different.<br></p>
+		<p>LEDs are 3.3 cm apart (left edge of one to left edge of neighboring one)</p>
+		<p>LED is about 0.5 cm wide</p>
+		<p>Edge of LED to edge of sheath is 0.4 cm</p>
+		<p>LED sheath is 1.3 cm wide</p>
+		<p>32 LEDs from left edge of leftmost one to right edge of rightmost one is 103 cm</p>
+		<p>3.3 * 8 + 0.5 = 26.9 cm from bottom edge of bottom LED to top edge of top LED</p>
+		<h2>Conceptual Design</h2>
+		<img class="centeredImage" src="/images/ledpanel/frameconcept.jpg"/>
+		<p>Okay, so here was my conceptual design for the frame, viewed as a cross-section.</p>
+		<ol>
+			<li>The LEDs are mounted on some sort of white cardboard</li>
+			<li>The white cardboard is mounted on a wooden frame that rests on the wall, making room for the electronics at the back</li>
+			<li>Around the edge of the cardboard, there is some cardboard strip that is the same height as the LED sheath</li>
+			<li>Paper rests on all that, making an even surface to diffuse the light (and it looks decent when it's off)</li>
+			<li>A wooden outer frame holds the paper onto the bottom part</li>
+		</ol>
+		<p>When I actually built this, there was no top frame (step 5). I just wrapped paper around the whole thing and it looks great. </p>
+		<h2>Measure Out and Draw Everything on the Project Board</h2>
+		<p>What you need to achieve is 8 lines, exactly 103 cm long and 3.3 cm apart vertically, drawn on the project board, parallel to the edges, and with equal distances on all sides from the outer edge of the corresponding LED to the edge of the project board. </p>
+		<p>I drew these lines to mark where the bottom of the LED strip would go, so they're offset a little bit vertically. I did this because I needed a guide for when I was attaching the LEDs to the cardboard.</p>
+		<img class="centeredImage" src="/images/ledpanel/projectboard.png"/>
+		<p>I wanted there to be a plain border of 6 cm on all sides (from the outer edge of whichever LED), and since the distance from the edge of the LED to the edge of the sheath is roughly 4mm, the distance from the bottom line to the bottom edge of the cardboard should be 6 cm - 4 mm. Left and right are straightforward (6 cm). The distance from the top line to the top of the board is 7.3 cm (6 + 1.3 cm, which is the width of the sheath).</p>
+		<p>Draw this all out (use the wood as a guide for straight lines and make sure your lines are parallel to the edges), lay the LEDs on the board, and use the ruler to make sure everything lines up (I remember I estimated things wrong and had to re-draw lines quite a bit). Make sure it makes sense. </p>
+		<h3>Make the Wooden Part</h3>
+		<p>Double-check your measurements and cut the wood to size. This is what mine looked like (not to scale and perhaps not the right measurements):</p>
+		<img class="centeredImage" src="/images/ledpanel/wood.png"/>
+		<p>Really, I ended up not trusting my calculations and just relied on re-measuring stuff and double checking that everything looked good and I stopped writing stuff down so you should stop trusting my numbers and start trusting your tape measuring tape.</p>
+		<p>I had the wood (1 cm x 2 cm x 115.5 cm) so that it was holding the frame 2cm from the wall to fit the electronics.</p>
+		<p>Also, on the left vertical piece, I cut (and drilled - it was really hacky) a place for the wires to come out the side. Looked like this: </p>
+		<img class="centeredImage" src="/images/ledpanel/woodhole.png"/>
+		<ol>
+			<li>Put the wood on the project board and line it up (should be inside your perimeter lines) </li>
+			<li>Place the corner brackets where they're supposed to go and mark in pencil where the screws should go</li>
+			<li>Drill holes with a drill bit just slightly smaller than the width of the screws where you marked with pencil</li>
+			<li>Put the wood back on the project board and start screwing things together. At this point, you really need to make sure, as you're tightening the screws, that the wood still lines up. It's easy for things to get askew. You can always unscrew the screws and do it again.</li>
+		</ol>
+		<h3>Cut the Project Board to Size</h3>
+		<p>Now you know for sure how big the wooden frame is going to be because you've already made it. Cut the project board with a utility knife so it fits the wooden frame. You will also need to cut a 1 cm wide slit to the left of the lines you drew for the wires to go through. Do this when you have lined up the LEDs on the board and know where the wires want to go.</p>
+		<h3>Drill Holes to Attach LED strips to Board</h3>
+		<p>I attached the LED strips to the board by threading a thin, bendable wire through the bottom of the sheath (always under an LED - NOT UNDER A CONNECTION BETWEEN LEDS) and then through holes in the board and twisted them tight at the back. You need to drill holes on either side of where the sheath will be.</p>
+		<p>Line up the LEDS on the board and draw dots where the holes should be. I used 5 wires per strip, evenly spaced.</p>
+		<img class="centeredImage" src="/images/ledpanel/holes.png"/>
+		<p>After you've drawn all of them, drill tiny holes that you could poke the wire through.</p>
+		<h3>Hot Glue the Project Board to the Wooden Frame</h3>
+		<p>This part is scary because hot glue goes hard quickly. I did it in parts (1 long side, part of a short side, part of the other short side, the last long side). Make sure your hot glue gun is at peak HOTNESS and also has a lot of glue ready to go. Don't burn yourself.</p>
+		<h3>Attach the LEDs  to the Board</h3>
+		<ol>
+			<li>Line up an LED strip - right edge of rightmost LED lined up with the line I draw 6 cm from the right outer edge of the board</li>
+			<li>Poke little slits in the bottom side of the sheath next to the holes using the tip of the blade of the utility knife</li>
+			<li>Poke the wire through at all 5 places where you poked holes</li>
+			<li>One by one, bend the wires so they're pointing down into the holes you drilled and ALSO at the same time, make sure the sheath is lining up with the lines you drew</li>
+			<li>Flip the board up on its side and twist the wire ends together at the back, securing the LED strips (keep checking the front to make sure everything is lined up)</li>
+			<li>Repeat with the next strip (use the ruler to line up the LEDs vertically as you go)</li>
+		</ol>
+		<h3>Plug Everything in and TEST IT</h3>
+		<p>You know how this goes! Revel in your creation!</p>
+		<h3>Hanging Hardware</h3>
+		<p>You can use whatever method you want to attach it to the wall, but I put two screws on the inside of the wooden frame, next to the edge that touches the wall, then strung some craft wire between them. </p>
+		<img class="centeredImage" src="/images/ledpanel/wire.png"/>
+		<p>Then I hung it on the wall using two nails that were about a foot and a half apart (don't do this part yet).</p>
+		<h3>Wrap it in Paper</h3>
+		<p>Wrap it like a present (using the tape), covering the front. Make it nice and consistently tight over the LEDs.</p>
+		<h3>HANG IT OMG</h3>
+		<p>The electronics just chill at the back. I didn't secure them with anything.
+		Pro tip: I used the ruler to hold the craft wire against the wall as I was lowering the panel onto the nails. It was almost impossible before I discovered that.</p>
+		<h3>TEST IT AGAIN</h3>
+		<p>And have a lie down. That was exhausting!</p>
+		<h2><a href="http://harrietwillmott.ca/programming.html">Next: program some stuff</a></h2>
+    </body
+</html>

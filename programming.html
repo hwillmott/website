@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+        <script type="text/javascript" src="/scripts/sitefunctions.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
+
+    <body style="margin:auto; width:800px;">
+        <div id="headermenu"></div>
+        <h1>Program a Visualization in Processing</h1>
+        <img style="display:block; margin-left:auto; margin-right:auto" src="https://media.giphy.com/media/hEAVWkmzzK6xa/giphy.gif"/>
+        <h2>Quick Start</h2>
+        <p>You can program visualizations however you want, but here's a way to get something going pretty quickly:</p>
+        <ol>
+            <li>Install processing: <a href="https://processing.org/download/?processing">https://processing.org/download/?processing</a></li>
+            <ol>
+                <li>Download it</li>
+                <li>Move the whole thing to somewhere permanent (e.g. on Mac, put the Processing application in Applications. On Windows, move the whole folder to somewhere like C:\Program Files (x86)\Processing 3.0.2)</li>
+                <li>You may have to add it to your path (definitely will on Windows but can't remember on Mac)</li>
+            </ol>
+            <li>Download this: <a href=" https://github.com/hwillmott/processing/tree/master/fadecandy/conway">https://github.com/hwillmott/processing/tree/master/fadecandy/conway</a></li>
+            <li>You need both of those files to be in a folder named 'conway' </li>
+            <li>Start the fadecandy server</li>
+            <li>Start the sketch (conway.pde) by either double-clicking it, or opening the processing application you downloaded and opening the conway file, then pressing play.</li>
+        </ol>
+        <br>
+        <h2>What is going on here?</h2>
+        <p>This is a visualization of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life </a> initialized with a random grid, with a few important variations:</p>
+        <ol>
+            <li>Cells are initialized as 1 of 2 defined colors</li>
+            <li>The color of a given cell at each generation is influenced by the colors of its neighboring cells at the last generation (weighted average)</li>
+            <li>5 new cells are added randomly to the board at each generation (or it gets boring pretty quickly)</li>
+        </ol>
+        <p>You may be wondering what the OPC.pde file does. It does all the communication with the fadecandy server. Basically, you define points on your processing sketch which you want to be the LED pixels. At every frame, the color of that pixel in the processing sketch is sent to the LEDs and that is the color they render.</p>
+        <p>You need to have an OPC object in your sketch:</p>
+        <code>OPC opc;</code>
+        <p>You need to initialize it in setup:</p>
+        <code>opc = new OPC(this, "127.0.0.1", 7890);</code>
+        <code class="code">opc.simpleLedGrid(32, 8, width/2, 80, 10, 10);</code>
+        <p>simpleLedGrid is a method I wrote in OPC.pde because I didn't like the built-in methods for initializing a grid of pixels. I wanted the pixels to be evenly spaced in a rectangle to make it simpler to address each pixel individually. Here's what it looks like: </p>      
+        <code>void simpleLedGrid(int stripLength, int numStrips, float x, float y, float ledSpacing, float stripSpacing)</code><br>
+        <code>{</code><br>
+        <code style="padding-left:15px">y = y - stripSpacing / 2;</code><br>
+        <code style="padding-left:15px">for (int i = 0; i < numStrips; i++)</code><br>
+        <code style="padding-left:15px">{</code><br>
+        <code style="padding-left:30px">ledStrip(i * 64, stripLength, x, y - (i * ledSpacing), ledSpacing, 0, false);</code><br>
+        <code style="padding-left:15px">}</code><br>
+        <code>}       </code><br>
+        <h2>Learning Processing to make your own visualizations</h2>
+        <p>Processing is a simple graphics language and there are some good resources out there. Your first stop would be the Processing website, which has tutorials and great documentation: <a href="https://processing.org/tutorials/">https://processing.org/tutorials/</a></p>
+        <p>I learned from examples from this book: <a href="http://www.generative-gestaltung.de/">http://www.generative-gestaltung.de/</a></p>
+        <p>And then started making more interesting sketches while going through this book: <a href="http://natureofcode.com/book/introduction/">http://natureofcode.com/book/introduction/</a></p>
+        <br>
+        <p>Pro tip: Sublime Text has a Processing package that makes programming really easy (and prettier than the Processing window): <a href="https://github.com/b-g/processing-sublime">https://github.com/b-g/processing-sublime</a></p>
+        <p>The only thing you don't get when you're programming in Sublime Text instead of the default Processing window is debugging. </p>
+    </body>
+</html>
