@@ -111,7 +111,7 @@ hr {
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
-img .centeredImage{
+.centeredImage{
   display:block; 
   margin-left:auto; 
   margin-right:auto;
