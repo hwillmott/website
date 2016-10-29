@@ -13,7 +13,6 @@ int displaySetting = 0;
 void setup()
 {
 	jProcessingJS(this, {fullscreen:true});
-	//size(800,600);
 	colorMode(HSB, 360, 100, 100);
 
 	resolution = 30;
@@ -31,7 +30,6 @@ void draw()
 {
 	noStroke();
 	fill(180, 50, 6, 10);
-	//fill(200, 100, 5);
 	rect(0, 0, width, height);
 
 	if (timer % 9 == 0)
