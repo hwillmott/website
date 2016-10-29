@@ -94,7 +94,7 @@ header {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 30%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(127,127,127,1);
   position: absolute;
   right:0px;
   text-align: left;

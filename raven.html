@@ -12,5 +12,9 @@
     <body>
         <div id="headermenu"></div>
         <p><canvas id="canvas1" data-processing-sources="/scripts/raven.pde /scripts/Fragment.pde" style="padding: 0; margin:auto; z-index: 1"></canvas></p>
+        <div style="position: absolute; left: 900; top: 300; z-index:2; width:400"><p>I drew this raven out of semi-transparent polygons, roughly based off of a photo of a raven. </p>
+        <p>The fragments drifting up off of the raven are generated randomly. There are about 50 at any time and they spawn behind the raven. When one spawns, it is given a speed, a size factor, and a starting angle. Points are generated around a circle, at different (random-ish * size factor) distances from the starting point, by incrementing the angle by a random amount for every point and stopping after the angle is greater than 2 * PI</p>
+        <p>The lifetime of the fragment is determined by its speed. As it gets farther from the raven, it becomes more transparent and eventually 'dies', to be replaced by another fragment.</p></div>
+        </div>
     </body
 </html>

@@ -13,7 +13,7 @@ float xMargin;
 
 void setup()
 {
-  jProcessingJS(this, {fullscreen:true});
+  size(600,800);
   colorMode(HSB, 360, 100,100,100);
   x = new float[300];
   y = new float[300];
