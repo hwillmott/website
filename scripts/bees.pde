@@ -11,7 +11,7 @@ PImage img;
 
 void setup()
 {
- jProcessingJS(this, {fullscreen:true});
+ size(605,806);
  background(#ccc7b6);
  smooth();
  frameRate(20);
@@ -33,12 +33,9 @@ void mousePressed()
 void draw()
 {
  noStroke();
- fill(#ccc7b6, overlayAlpha)
- rect(0,0,width/2 - 300, height);
- rect(width/2 + 305,0, width, height);
- rect(width / 2 - 300, 400, 605, height - 400);
+ fill(#ccc7b6, overlayAlpha);
  tint(255, overlayAlpha);
- image(img,width / 2 - 300,0);
+ image(img,0,0);
  
  stroke(0, beeAlpha);
  

@@ -11,6 +11,11 @@
 
     <body style="background-color:#ccc7b6;">
         <div id="headermenu"></div>
-        <p><canvas id="canvas1" data-processing-sources="/scripts/bees.pde /scripts/Bee.pde" style="padding: 0; margin:auto; z-index: 1"></canvas></p>
+        <p><canvas id="canvas1" data-processing-sources="/scripts/bees.pde /scripts/Bee.pde" style="padding: 0; position: absolute; left: 500; z-index: 1"></canvas></p>
+        <div style="position: absolute; left: 30; top: 100; width:420; z-index:2">
+        <p>These bees are an example of wandering agents. There are 10 bees buzzing around the hive. The angle of the bee's movement changes at each step randomly if it's close enough to the hive, or it turns back toward the hive if it's straying too far. At each step, a short line is drawn in the direction it's moving. The lines fade gradually because at each step, the whole sketch is overlaid with a semitransparent version of the background image.</p>
+        <p>This is when I discovered that I really enjoy mixed-media sketches. Drawing the bees was the fun part, but I had no interest in figuring out an algorithm to draw a hive. I first tried using a picture from the internet as the background, but nothing looked right. So, I decided to just draw one with pens and paper. I loved the result!</p>
+        <p>Click somewhere on the sketch and the bees will migrate to the point you clicked!</p>
+        </div>
     </body
 </html>
