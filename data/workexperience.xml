@@ -51,10 +51,17 @@ Used: C#, XAML, WPF]]></job>
 Used: Java, Python, C
 Graduated with a Bachelors in Computer Science with Honours and Distinction]]></job>
 <job company="Travel" position="Obligatory Post-Graduation Eurotrip" duration="April 2014 - June 2014" months="3" color="1"><![CDATA[Italy, Greece, and Croatia!]]></job>
-    <job company="Microsoft" position="Software Engineer" duration="September 2014 - Present" months="12" color="2" ><![CDATA[On the Visual Studio/XAML Experiences Team
+    <job company="Microsoft" position="Software Engineer" duration="September 2014 - April 2016" months="12" color="2" ><![CDATA[On the Visual Studio/XAML Experiences Team
 Responsibilities:
     Develop new features for Blend
     Design, write, and maintain automated tests for Visual Studio and Blend
     Fix bugs and refactor legacy code
 Using: C#, XAML, WPF, C++]]></job>
+<job company="Microsoft" position="Software Engineer" duration="April 2016 - Present" months="8" color="6" ><![CDATA[On the Cortana Proactive Experiences Team
+Responsibilities:
+    Enable accessible UI across devices for Cortana
+    Integrate with 3rd party services to extend Cortana's functionality
+    Enhance test coverage for Cortana services
+    Design and implement REST API for Cortana music service
+Using: HTML, JavaScript, CSS, C#, xUnit, REST]]></job>
 </workexperience>

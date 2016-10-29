@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="headerwhite.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
+        <script type="text/javascript" src="/scripts/processing.js"></script>
+        <script type="text/javascript" src="/scripts/jprocessingjs-0.9.min.js"></script>
+        <script type="text/javascript" src="/scripts/sitefunctions.js"></script>
+    </head>
+
+    <body style="margin:auto; width:800px; background-color: #010101">
+        <div id="headermenu"></div>
+        <div style="padding-top:50; text-align: center; color: rgba(255,255,255,0.7)"">
+            <p>This year, myself and 3 friends made LED jackets to wear at Burning Man. </p>
+        </div>
+        <img class="centeredImage" src="https://media.giphy.com/media/F1ugAJLAb9gvm/giphy.gif"/>
+        <div style="padding-top:50; color: rgba(255,255,255,0.7)"">
+            <p>I made the first jacket as a protoype. We all have unique LED layouts, and our methods definitely improved with each jacket, but some parts are consistent. </p>
+            <p>Each jacket runs on an Odroid C1+, with an Xbee router and a massive battery. On my jacket, I used 30 pixel per meter LED strip and 6 concentric LED rings. Soldering all the LED strips together in the right configuration and enough slack (but not too much) between strips so that you can easily dance in the jacket but also not have a lot of loose wire hanging around was possibly the biggest challenge. There was also the decision of where to put the circuit, computer, battery, and Xbee on your body. On my jacket, the Odroid and Xbee are in my left pocket, the circuit in a little pocket above that, and the battery is in a travel pouch sewn into the back of my jacket. Barrel jack cords have to go from the battery to both the Odroid and the circuit, there is a USB connection from the Odroid to the circuit, and the Odroid needs enough slack that you can take it out of your pocket to change the visualization.</p>
+            <p>After all the soldering and wiring, I sewed the LED strips to my jacket by sewing little white sleeves around each individual stip, then sewing those together to make a panel that can flex, then sewing the panel to the sleeves. I attached the rings to carboard, covered them with a screen of semitransparent plastic, then wrapped that in fabric and added some velcro so I could attach it to the other side of my jacket once I zipped it up in the front. I also sewed fabric channels for wires along my jacket so I wouldn't have wires poking out (in hindsight, it's much easier to have the wires inside the jacket). All in all, I spent probably 2 full weekends on sewing alone.</p>
+            <p>I made the first jacket because I knew that I was going to want a lot of time just to play with the visualizations. My friend Grady wrote the framework for the visualizations in Clojure, so I had to ramp up a bit on Clojure before I became very productive with the visualizations. We used a Clojure port of Processing called Quil, and I ended up having a LOT of fun writing different visualization. By the time we were packing up to go, we all had about 20 different 'scenes', which were composed of visualization layers, to visualize on our jackets. I made the visualizations highly paramaterized so everyone could have unique-looking jackets. All the scenes were defined in a configuration file (one for each jacket), and you could switch between them using a web interface that Grady wrote.</p>
+            <p>We didn't get to use the Xbees as much as we originally hoped, but in the final week, we had gotten everything else working and my friend Sam who had been working on the network tirelessly (and all the scripting and computer infrastructure) exposed a variable to our redis server that the visualizations would have access to and I wrote a little layer that turns on a pixel for every friend in your vicinity. We all picked places on our jackets to have the pixels (mine on my hand, theirs on their sleeves) and which colors they should be for each scene.</p>
+        </div>
+        <img class="centeredImage" style="padding-bottom: 50;" src="https://media.giphy.com/media/zLrc5gMn9ZdkI/giphy.gif"/>
+    </body
+</html>

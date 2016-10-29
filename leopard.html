@@ -3,14 +3,21 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="headerblack.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
         <script type="text/javascript" src="/scripts/processing.js"></script>
         <script type="text/javascript" src="/scripts/jprocessingjs-0.9.min.js"></script>
         <script type="text/javascript" src="/scripts/sitefunctions.js"></script>
     </head>
 
-    <body style="background-color:#e0d2b7;">
+    <body style="background-color:#e0d2b7; text-align: center">
         <div id="headermenu"></div>
         <p><canvas id="canvas1" data-processing-sources="/scripts/leopard/leopard.pde /scripts/leopard/Spot.pde /scripts/leopard/Cluster.pde" style="padding: 0; margin:auto; z-index: 1"></canvas></p>
+        <div style="text-align: center">
+        <div style="width:800; margin: auto; text-align: left">
+        <p>This sketch started when I became fascinated with trying to write an algorithm that would draw a leopard's spots. I read about Alan Turing's post-war efforts with trying to describe natural phenomena, like flower petal growth and animal spot formation. Biologists are still pretty confused about how it works, but Alan Turing's formulas were and are still heavily influential in the field. Essentially, it came down to different-colored cells with different chemical properties that started out pretty randomly oriented, but would group together or move apart depending on their properties, forming spots or stripes.</p>
+        <p>I started reading through Alan's actual paper on the matter and realized I wasn't motivated enough to work through all the math (even though it's really cool!), especially because I was interested in getting the spots to move around in my sketch. So, I came up with my own 'formula'. Leopard spots are pretty neat. They seem to be made up of small black splotches, and when there are enough, they form a ring around an orange center. Closer to the legs, they're just little black dots, but on the back of the leopard, there are many clusters that are big enough the have the orange center.</p>
+        <p>In this sketch, each leopard spot is a cluster of spots. Each cluster is initialized with a location and a number of spots. If there are more than 5 spots, the cluster has an orange center spot. When a cluster is initialized, it creates the boundary spots around the origin, giving them an initial location and 2 initial radii (x and y). All the spots in the cluster 'wiggle', by changing their radii based on Perlin noise, and the boundary spots 'wander', by moving their location based on Perlin noise.</p>
+        </div></div>
     </body
 </html>
