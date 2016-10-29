@@ -28,8 +28,8 @@ function sketchProc(processing)
     function initiateValues()
     {
         a = processing.TWO_PI;
-        x[0] = processing.width / 2;
-        y[0] = processing.height / 2;
+        x[0] = processing.width * 2 / 3;
+        y[0] = processing.height * 2 / 3;
         r[0] = 2;
         currentCount = 1;      
     }
