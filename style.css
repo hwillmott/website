@@ -164,20 +164,20 @@ hr {
 
 .menu ul {
   margin: 0;
-  padding: 0 10px 0 10px;
+  padding: 0 5px 0 5px;
   list-style-type: none;
   list-style-image: none;
 }
 
 .menu li {
   display: block;
-  padding: 15px 20px 15px 20px;
+  padding: 5px 10px 5px 10px;
 }
 
 .menu li:hover {
   display: block;
   background: rgba(0,0,0,0.5);
-  padding: 15px 20px 15px 20px;
+  padding: 5px 10px 5px 10px;
 }
 
 .menu ul li a {
