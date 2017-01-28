@@ -13,11 +13,45 @@
     <body style="margin:auto; width:800px; background-color: #010101">
         <div id="headermenu">
         </div>
-        <img class="centeredImage" style="padding-top: 50;" src="/images/f2/16_firstcolours.jpg"/>
+        <img class="centeredImage" style="padding-top: 50;" src="/images/f2/16_firstcolours.JPG"/>
         <div style="padding-top:50; color: rgba(255,255,255,0.7)">
-            <p>Fragments was a sort of last-minute project to make a LED installation for the ceiling of our shade structure at Burning Man. I was originally inspired by Firmament, which is a LED installation I had heard about that was at Burning Man in 2015. It is composed of traingular canopies of LEDs. The visualizations are programmed to go with classical music. It is very beautiful.</p>
-
+            <p>Fragments II is a refinement of Fragments I: instead of having lights covering the surface of each fragment, it has high-density strips around the edges of each fragment, which shows off the shapes a bit better. After making Fragments I, I decided that cardboard was too difficult to work with for LED installations, so I decided to take a welding course. My project for the end of the course was the structure for Fragments II.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/1_frame.JPG"/>
+            <p>I started out with a square frame to mount everything on. I decided I could probably hide most of the wires inside the frame.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/2_pieces.JPG"/>
+            <p>I cut strips of 16 gauge steel about 1/2 inch wide to make up the shapes. That's about the same width of the LED strips I use. I played around with the strips to make various shapes, marked them, cut them, and then welded them together. It's not a very accurate process but it's quick. No measuring. I started out by making a diamond and a couple triangles, arranged them together, then kept adding pieces and rearranging them, taking pictures when I discovered arrangements that I liked, until it looked right.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/3_together.JPG"/>
+            <p>Then I attached them to the frame by flipping them upside down and arranging them so they were a mirror image of what I wanted, then laid the frame on top, and welded them to the frame. Only one piece isn't touching the frame, and it is floating on a branch from another piece.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/4_darkened.JPG"/>
+            <p>I then sand-blasted it and darkened it using a propane torch, which is basically a flame thrower and it was a lot of fun. I left some parts undarkened because the spectrum that appears on the metal when it gets to different temperatures is really beautiful and it wouldn't be noticeable once the LEDs were on. I also sealed it so it wouldn't rust.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/5_final.JPG"/>
+            <p>Here's the final product. It took me some time to decide to put LEDs on it, since I liked it so much just on its own.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/6_firstline.JPG"/>
+            <p>It took me a long time to figure out how I was going to hide all of the electronics. The frame is about an inch deep, so there's barely enough room for the fadecandy. I had to slim down my circuit design considerably and cut a PCB so I just had the power rails. I underestimated how hard it is to cut PCB. You are not supposed to saw at it because the dust is terrible for you. I ended up scoring it repeatedly with a box cutter and then breaking it with pliers. A much better way to do this is with a large paper cutter.</p>
+            <p>The idea is for the circuit to sit inside the frame and only 2 cables come out. The power line coming from the circuit is very long (enough to get to the floor if it's hanging on a wall) with the pigtail barrel jack at the end. A USB cable comes up and plugs into the fadecandy. Both are wrapped in a braided cable sleeve, which is burned at both ends to prevent fraying.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/7_wirelayout.JPG"/>
+            <p>I created the circuit with one output line for testing the LED strips as I cut and soldered them. This is how the wires would be arranged in the back.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/8_teststrip.JPG"/>
+            <p>The golden rule of electronics and not ruining your day: test at every stage of the process.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/9_soldertack.JPG"/>
+            <p>Soldering the strips together so there wouldn't be a lot of excess wire was really challenging, especially because I was squatting on the concrete floor of a basement while doing so. Shoutout to Grady Simon for discovering the magic of poster tack when it comes to holding wires still.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/10_reinforcement.JPG"/>
+            <p>I had to attach the strips to the structure temporarily while I was working so that I could flip the structure over to do wiring in the back of the frame. I used those black plastic-coated twist ties that come with basically every electronic cable ever produced.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/11_allpieces.JPG"/>
+            <p>Here is what it looked like when I had done the perimeters of each shape, but had not yet attached them to the circuit, which was far and away the hardest part, because they had to be in place while I did it. This is because the wires in the back were threaded through rails to keep them hidden and by design had very little slack. </p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/12_alllines.JPG"/>
+            <p>This is the circuit with all the ouput lines attached.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/13_circuitinframe.JPG"/>
+            <p>Here is the circuit, nestled perfectly in the frame. It was blind luck that this worked out because I didn't do any measuring or planning when I was doing the welding.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/14_wiringlayout.JPG"/>
+            <p>After threading all the output lines through and soldering them to the LED strips, this is what it looked like at the back.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/15_firstlight.JPG"/>
+            <p>The most satisfying and tear-enducing part: turning it on for the first time.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/17_sewingstrips.JPG"/>
+            <p>Since the LEDs weren't actually attached properly to the frame yet, I still had to do that. I spent a lot of time thinking about it, my first plan being to use clear packing tape, but that was ludicrously frustrating and also looked cheap. I ended up tying it to the frame using craft wire. I poked a hole through the LED sleeve using a needle, then threaded a short piece of craft wire through and twisted it around at the end. The wire MUST be underneath the LED because wire is conductive! If it were under the copper parts, all hell would break loose. I used the black plastic-coated twist ties to secure the corners because there are exposed soldering points there.</p>
+            <img class="centeredImage" style="padding-top: 50;" src="/images/f2/20_finalproduct.JPG"/>
+            <p style="text-align:center;">TA-DA</p>
         </div>
-        <img class="centeredImage" style="width:480; padding: 50px 0px 50px 0px;" src="https://media.giphy.com/media/5rRx5PMQPdrEs/giphy.gif"/>
+        <img class="centeredImage" style="width:480; padding: 50px 0px 50px 0px;" src="https://media.giphy.com/media/m13f2S35EKNNK/giphy.gif"/>
     </body>
 </html>
