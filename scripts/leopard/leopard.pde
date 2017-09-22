@@ -7,8 +7,8 @@ void setup()
     size(1092,800);
     this.initializeFromFile();
     frameRate(20);
-    backgroundImg = loadImage("/images/foreground.png");
-    foregroundImg = loadImage("/images/background.png");
+    backgroundImg = loadImage("/images/pde/foreground.png");
+    foregroundImg = loadImage("/images/pde/background.png");
 }
 
 void initializeFromFile()

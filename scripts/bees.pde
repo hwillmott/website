@@ -21,7 +21,7 @@ void setup()
  {
   bees[i] = new Bee(); 
  }
- img = loadImage("/images/hive.png");
+ img = loadImage("/images/pde/hive.png");
 }
 
 void mousePressed()

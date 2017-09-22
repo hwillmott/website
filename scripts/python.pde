@@ -22,7 +22,7 @@ void setup()
   step = new float[300];
   xMargin = width / 2 - 300;
   tStart = new PVector(369 + xMargin, 625);
-  img = loadImage("/images/python.png");
+  img = loadImage("/images/pde/python.png");
   initializePoints();
   for(int i = 0; i < count; i++)
   {

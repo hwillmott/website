@@ -15,7 +15,7 @@ void setup()
     f[i] = new Fragment();
   }
   
-  img = loadImage("images/crow.png");
+  img = loadImage("images/pde/crow.png");
 }
 
 void draw()
