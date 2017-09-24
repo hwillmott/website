@@ -33,18 +33,18 @@
         <img class="centeredImage" src="https://cdn-learn.adafruit.com/assets/assets/000/012/345/medium640/led_pixels_system-diagram-1.png?1384915040"/>
         <h3>Prototyping/Breadboard Overview</h3>
         <p>The prototyping board I used (identical design to the breadboard) has power rails going along the board and each numbered line on each side is connected across that side of the board (e.g. 1J is connected to 1I, 1H, 1G, and 1F, but not 1A, 1B, 1C, 1D, or 1E). So, if you plug the Fadecandy data out wire into 18F, you can plug another wire into 18G and connect that to the LED data in terminal and your LED will have data (if you get everything else right).</p>
-        <img class="centeredImage" src="/images/ledpanel/proto.jpg"/>
+        <img class="centeredImage" src="/images/panel/proto.jpg"/>
         <h3>My Final Design</h3>
         <p>The LEDs need both power and data. The power comes from the power brick and the data comes from the Fadecandy (connected by USB to a computer). The Fadecandy and the LEDs both need to be connected to ground, which is made available through the power brick. I decided to create a hub for both power and data that the LEDs could connect to, so there wouldn't be a whole mess of wires behind the frame.</p>
         <p>The following is a picture of the circuit design I ended up with.</p>
         <p>Black: ground</p>
         <p>Blue: data</p>
         <p>Red: power</p>
-        <img class="centeredImage" src="/images/ledpanel/circuit.jpg"/>
+        <img class="centeredImage" src="/images/panel/circuit.jpg"/>
         <p>Each data line coming from the Fadecandy corresponds directly to one LED strip, partially to make my life easy, but also because the resistance in copper wire is enough that after a meter you start losing some of your data and the color of the LEDs will become less accurate. Each Fadecandy output port can support data for 64 LEDs, but since I'm using the 30 pixel per meter strips (and after a meter or so, things start getting weird), I decided to play it safe. If you're doing this with the 60 pixel per meter strips, you could have a different configuration.</p>
         <p>So, data and ground come from the Fadecandy and connect with the ground rail and a horizontal line on the board. Then, a resistor connects that horizontal line with the one above. Data comes out from that line, with another ground and a power connection going to the LED strip. I lined them all up visually just to make things easy (they appear a little offset in the drawing because I didn't want lines to overlap). Grid cells on the paper represent holes in the breadboard.</p>
         <p>Here's a choppy closeup:</p>
-        <img class="centeredImage" src="/images/ledpanel/closeup.jpg"/>
+        <img class="centeredImage" src="/images/panel/closeup.jpg"/>
         <h2>Prototyping</h2>
         <p>No one wants to solder everything together and then realize they mixed up power and ground and all their LEDs are fried. This stage is essential. You still need to do a bit of soldering, but we can minimize risk of getting irreversible things wrong.</p>
         <h3>Solder Connections to the Fadecandy</h3>
@@ -79,14 +79,14 @@
         <h3>Cut LEDs to Size</h3>
         <p>You need 8 strips of 32 LEDs, which will probably be some combination of 2 larger strips of LEDs. When you're cutting the LED strips, you want to cut as straightly as you can halfway through the connections between the LEDs (dout -> din, gnd -> gnd, +5V -> +5V). These are little copper ovals on the strip. Try to cut them exactly down the middle. There's even a little marked line to show you where to cut. Do your future self a favor and leave room for soldering connections.</p>
         <p>Cut the sheathing with the LED strips (we want to keep it), by aiming the wire cutters for the metal part and cutting that in one go, then clipping whatever parts of the sheath are still connected. </p>
-        <img class="centeredImage" src="/images/ledpanel/cutsolder.png"/>
+        <img class="centeredImage" src="/images/panel/cutsolder.png"/>
         <h3>Maybe Solder Some Strips Together</h3>
         <p>If you're me, you ended up with 7 32-pixel strips and a smaller strip from the end of each of my 2 reels, which needed to be soldered together. DON'T CUT THEM TO SIZE. Just solder them together (din -> dout). Maybe you'll make a mistake and they won't be lined up perfectly or the connection will suck and you'll have to cut off an LED and start over. Make sure the arrows on the strips are pointing the same way. </p>
         <p>Solder them together by lining them up so they're a straight line together and make sure you measure the distance between the LEDs you're connecting and they're the same distance apart as LEDs that haven't been soldered together by hand (3.3 cm but double check anyways). Then basically heat up the copper pad and drop some solder on there so there's a mound between the two strips.</p>
         <p>Make sure you have good ventilation, especially if you're using lead core solder!</p>
         <h3>Solder 3 Pin Connectors on Every Strip</h3>
         <p>We want the female part of these connector pairs attached to every strip the same way. The connectors only plug together one way (like a USB drive) because we obviously don't want to be able to connect power to ground accidentally. Get familiar with how they plug together, then solder one female connector to each of the strips.</p>
-        <img class="centeredImage" src="/images/ledpanel/3pin.png"/>
+        <img class="centeredImage" src="/images/panel/3pin.png"/>
         <h3>Test Your Stuff Again</h3>
         <p>Now you can use breadboard jumpers to test each strip individually (and every output pair from the fadecandy!) using the steps above.</p>
         <p>If that all worked, then the circuit design is good and all the parts are good! Time to solder some stuff to the protoboard. </p>
