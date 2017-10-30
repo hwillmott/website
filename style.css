@@ -197,3 +197,11 @@ hr {
 .menu a:hover {
   text-decoration: none;
 }
+
+.fiction {
+  color: #f4b942;
+}
+
+.nonfiction {
+  color: #42b9f4;
+}
