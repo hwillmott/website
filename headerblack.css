@@ -34,3 +34,7 @@ header {
 .menu a:hover{
   color: rgba(0,0,0,0.9);
 }
+
+p {
+  color: rgba(0,0,0,0.9);
+}
