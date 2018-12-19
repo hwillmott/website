@@ -83,7 +83,7 @@ header {
   z-index: 10000000000000;
 }
 
-.menu {
+.xmenu {
   z-index: 1000000;
   font-weight: bold;
   font-size: 1em;
@@ -97,6 +97,17 @@ header {
   white-space: nowrap;
 }
 
+.menu {
+    background: #3d6348;
+    color: #0a4155;
+    font-weight: bold;
+    font-size: 0.7em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    display:inline-block;
+    height:auto;
+    z-index:2;
+}
 .resumetitle {
   font-size: 40px;
   margin: 0;
@@ -159,26 +170,19 @@ hr {
 }
 
 .menu p {
-  padding-left: 10px;
+  padding-left: 5px;
   padding-top: 5px;
 }
 
 .menu ul {
   margin: 0;
-  padding: 0 5px 0 5px;
+  padding: 0 10px 0 10px;
   list-style-type: none;
   list-style-image: none;
 }
 
 .menu li {
   display: block;
-  padding: 5px 10px 5px 10px;
-}
-
-.menu li:hover {
-  display: block;
-  background: rgba(0,0,0,0.5);
-  padding: 5px 10px 5px 10px;
 }
 
 .menu ul li a {

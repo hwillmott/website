@@ -1,9 +1,6 @@
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="headerbrown.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
         <script type="text/javascript" src="/scripts/processing.js"></script>
         <script type="text/javascript" src="/scripts/jprocessingjs-0.9.min.js"></script>
@@ -11,7 +8,6 @@
     </head>
 
     <body style="background-color:#ccc7b6;">
-        <div id="headermenu"></div>
         <p><canvas id="canvas1" data-processing-sources="/scripts/bees.pde /scripts/Bee.pde" style="padding: 0; position: absolute; left: 500; z-index: 1"></canvas></p>
         <div style="position: absolute; left: 30; top: 100; width:420; z-index:2">
         <p>These bees are an example of wandering agents. There are 10 bees buzzing around the hive. The angle of the bee's movement changes at each step randomly if it's close enough to the hive, or it turns back toward the hive if it's straying too far. At each step, a short line is drawn in the direction it's moving. The lines fade gradually because at each step, the whole sketch is overlaid with a semitransparent version of the background image.</p>

@@ -1,16 +1,12 @@
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="headerblack.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One">
 <script type="text/javascript" src="/scripts/processing.js"></script>
-<script type="text/javascript" src="/scripts/sitefunctions.js"></script>
 </head>
 
 <body>
-<div id="headermenu"></div>
 <p><canvas id="canvas1" style="position:absolute; left: 0px; top: 0px; z-index: 1"></canvas></p>
 <div style="position: absolute; top: 100; left: 50; width: 350; z-index: 2"><p>This was my first generative processing sketch, which is essentially a modified version of a tutorial from the Generative Gestaltung book. It starts with a cell in the center, then at each step, a random-ish coordinate is generated on the screen and then a cell is drawn next to an existing cell that is nearest to the generated coordinate.</p>
 <p>The coordinates that are generated are not exactly random. When I just used random number generation, the structure always ended up as a cross. I experimented with a lot of different formulas to try to get something that looked organic, and ended up with something pretty complicated and I'm not sure I remember the reasoning anymore, but it's on github if you're really interested.</p>
