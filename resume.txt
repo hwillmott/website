@@ -46,7 +46,6 @@ Spotify Backup Tool
 * I cherish my playlists and am afraid of Spotify losing my data (a friend had her whole library accidentally deleted once), so I built a tool that, after authentication, creates CSV files of all the tracks in all of your playlists, and downloads them to datamarked folder on your desktop
 * this is still a work in progress--I would like to put it on my website so anyone can use it
 
-
 LED Art and Visualizations
 * (Processing, Clojure, ClojureScript, Quil, Unix, welding, PCB design, soldering)
 * videos and tutorials of these projects are on my website harrietwillmott.com
