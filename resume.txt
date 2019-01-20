@@ -1,0 +1,79 @@
+Harriet Willmott
+Email: harriet.willmott@gmail.com
+Phone: 206-549-9131
+Website: harrietwillmott.com
+Github: https://github.com/hwillmott
+
+==Work Experience==
+
+Software Engineer Google, Hire team (March 2017-Present)
+* Backend developer (NodeJS)
+* built tool to import customer data in bulk, decreasing the amount of time it takes to onboard a new customer by roughly 30% (3 days for an average customer)
+* built feature that enables companies to create custom questions to ask on feedback forms
+* built a feature that tracks whether or not a user has reviewed a candidate application (many-to-many mapping from users to applications) and made it efficient enough that users see live updates in the web app when applications go from 'unread' to 'read'
+* hosted an intern and helped them deliver 2 successful projects over 12 months
+
+Software Engineer Microsoft, Cortana team (April 2016-March 2017)
+* Full stack developer (C#, CSS, CSHTML, REST)
+* implemented accessibility features for Cortana desktop client and Edge browser
+* enabled controller navigation for Cortana on Xbox
+* Integrated 3rd party services to extend Cortana's functionality
+* designed and implemented state/command service and APIs to sync streamed content across multiple Cortana endpoints (speakers, desktop app, phone app)
+
+Software Engineer Microsoft, Visual Studio - XAML experiences team (September 2014-April 2016)
+* Full stack developer (C#, XAML, C)
+* implemented accessibility features for Blend (keyboard navigation, screen reader)
+* Enabled SDK discovery for the Universal Windows Platform
+* Refactored and built unit, component, and integration tests for kay parts of the XAML Language Service Intellisense (autofill), enabling the team to build new features for it
+
+Developer Semaphore Solutions (May 2012- August 2012)
+* full stack developer (PHP, Java)
+* analyzed available content management systems (CMS) and advised on which one the company should use on future projects
+* built the company website on the aforementioned CMD (wordpress)
+* developed part of an Android app, embedding audio data in JPEG files
+
+Developer, Sierra Systems (June 2011-August 2011)
+* full stack developer on a provincial government warrant system (XDP, PL/SQL)
+* created XDP templates for Adobe PDF forms that take XML data and generate a warrant
+* edited database scripts that generate XML data for warrants (PL/SQL)
+* edited and created new data forms using Oracle Forms
+* converted warrant forms from English to French
+
+==Personal Projects==
+
+Spotify Backup Tool
+* accessible on my github (NodeJS)
+* I cherish my playlists and am afraid of Spotify losing my data (a friend had her whole library accidentally deleted once), so I built a tool that, after authentication, creates CSV files of all the tracks in all of your playlists, and downloads them to datamarked folder on your desktop
+* this is still a work in progress--I would like to put it on my website so anyone can use it
+
+
+LED Art and Visualizations
+* (Processing, Clojure, ClojureScript, Quil, Unix, welding, PCB design, soldering)
+* videos and tutorials of these projects are on my website harrietwillmott.com
+* made a steel wall sculpture with LEDs on it
+* made a ceiling installation
+* made LED jackets with some friends that communicate over a local network of xBees
+* made a LED panel (above my desk at work--I take requests for new visualizations)
+
+Software Lead, Aero Club, University of Victoria (September 2011-December2013)
+* the Aero club designs and builds autonomous aircraft each year for a national competition
+* researched existing autopilot technologies and determined which would suit our needs best
+* organized the software team to get the autopilot running properly
+* led team meetings to make important decisions about the autopilot software
+* worked with the team on the autopilot code (mainly focused on automating a search flight path)
+* recruited and onboarded new students
+
+==Education==
+Bachelors, Computer Science (University of Victoria September 2009-May 2014)
+GPA: 4.0
+
+==Awards==
+James R. Bullick Memorial Scholarship (Engineering) - University of Victoria 2012
+Uvic Faculty Scholarship (Engineering) - University of Victoria 2012
+President's Scholarship - University of Victoria 2012
+President's Entrance Scholarship - University of Victoria 2009
+
+==Languages==
+English (fluent)
+French (not fluent)
+
